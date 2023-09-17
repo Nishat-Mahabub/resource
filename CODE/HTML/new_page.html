@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table,th,tr,td{
+        border: 1px solid black;
+        padding: 0px;
+        }
+        tr:nth-child(odd){
+        background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div class="alignment">
+        <div>
+            <p>যশোর বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়</p>
+        </div>
+        <br> <br>
+        <form>
+            <level for="name">Nickname : </level>
+            <input type="text" name="name" id="name" placeholder="Enter your Nickname">
+            <br> <br>
+            <lebel for="pasword">Password : </lebel>
+            <input type="password" name="password" id="password" placeholder="Enter password"  required >
+            <br> <br>
+            <lebel for="date">Date of birth : </lebel>
+            <input type="date" name="data" id="date">
+            <br> <br>
+            <lebel for="photo">Choose photo : </lebel>
+            <input type="file" name="photo" id="photo">
+            <br> <br>
+            <lebel for="gender">Gender : </lebel>
+            <input type="radio" name="gender" id="gender"> Male
+            <input type="radio" name="gender" id="gender"> Female
+            <input type="radio" name="gender" id="gender"> None
+        <div>
+            <label for="department"> Department : </label>
+            <select name="dapartment" >
+                <option value="CSE">CSE</option>
+                <option value="EEE">EEE</option>
+                <option value="IPE">IPE</option>
+                <option value="ChE">ChE</option>
+                <option value="PME">PME</option>
+            </select>
+        </div>
+        <div>
+            <label for="feedback"> Feedback : </label>
+            <textarea rows="10" cols="20"> </textarea>
+        </div>
+        <div>
+            <input class="link-design button-decoration"  type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+        </form>
+    </div>
+
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Id</th>
+                <th>Remark</th>
+
+            </tr>
+            <tr>
+                <td>Nishat</td>
+                <td>190149</td>
+                <td>good</td>
+            </tr>
+            <tr>
+                <td>Nishat</td>
+                <td>190149</td>
+                <td>good</td>
+            </tr>
+            <tr>
+                <td>Nishat</td>
+                <td>190149</td>
+                <td>good</td>
+            </tr>
+
+        </table>
+    </div>
+    <button type="button" class="alignment link-design font-style button-decoration" onclick="alert('i am full stack developer')">Respond</button>
+
+    
+</body>
+</html>

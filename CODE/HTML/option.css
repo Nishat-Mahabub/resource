@@ -1,0 +1,25 @@
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: aqua;
+    overflow: hidden;
+}
+menu{
+    
+    background-color: blueviolet;
+}
+ li {
+     /* border: 3px solid red; */
+     float: left;
+ }
+ li a{
+     display:block;
+    padding: 10px 10px;
+    text-decoration: none;
+    text-align: center;
+ }
+ li a:hover{
+     background-color: gray;
+     color: white;
+ }

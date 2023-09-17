@@ -1,0 +1,28 @@
+
+.heading{
+    color:brown;
+    font-size: 70px;
+    text-shadow: 5px 3px black;
+    background-color: gray;
+    display: inline;
+}
+.font-style{
+    color: #28B463;
+    font-family:"Cursive";
+    font-style:italic;
+    font-weight: bold;
+}
+*{
+    background-color:#f7f7f7;
+}
+.alignment{
+    text-align: center;
+}
+.link-design:hover{
+    color: white;
+    background-color: green;
+}
+.button-decoration{
+    background-color: #00ff00;
+    color: black;
+}
