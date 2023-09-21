@@ -18,49 +18,13 @@ void print(vl &vec){for(ll i=0;i<vec.size();i++){
 cout << vec[i] << " ";}cout << endl;}void print(ll x){cout << x << endl;}
 void print(char x){cout << x << endl;}void print(string &x){cout << x << endl;}
 //===================== Main problem Code starts from here =======================//
-
-ll mn;
-vl nums,vis;
-vl graph[N];
-
-void dfs(ll node){
-    mn=min(mn,nums[node]);
-    vis[node]=1;
-    for(auto x: graph[node]){
-        if(!vis[x]) dfs(x);
-    }
-}
 void solve(){
-        ll n,p;
-        cin >> n >> p;
-        nums.resize(n+1);
-        vis.resize(n+1,0);
-        for(ll i=1;i<=n;i++){
-            cin >> nums[i];
-        }
-        unordered_map<ll,ll> mp;
-        for(ll i=0;i<p;i++){
-            ll a,b;cin >> a >> b;
-            mp[a]=1;
-            mp[b]=1;
-            graph[a].push_back(b);
-            graph[b].push_back(a);
-        }
-        ll ans=0;
-        for(ll i=1;i<=n;i++){
-            if(mp.find(i)==mp.end()) ans+=nums[i];
-            else if(!vis[i]){
-                mn=INT_MAX;
-                dfs(i);
-                ans+=mn;
-            }
-        }
-        cout << ans << el;
-
+        ll w,h;cin >> w >> h;
+        
 }
 int main(){
     ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-    ll t=1;//cin >> t;
+    ll t;cin >> t;
     while(t--){
         solve();
     }
