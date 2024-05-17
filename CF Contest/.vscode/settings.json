@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "*html": "html",
+        "iostream": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp",
+        "ostream": "cpp",
+        "string": "cpp",
+        "chrono": "cpp",
+        "random": "cpp",
+        "limits": "cpp",
+        "valarray": "cpp",
+        "deque": "cpp",
+        "vector": "cpp"
+    }
+}
