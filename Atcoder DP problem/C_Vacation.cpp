@@ -15,30 +15,32 @@ void print(vl &vec){for(ll i=0;i<vec.size();i++){
 cout << vec[i] << " ";}cout << endl;}void print(ll x){cout << x << endl;}
 void print(char x){cout << x << endl;}void print(string &x){cout << x << endl;}
 //===================== Main problem Code starts from here =======================//
-vector<ll> adj[100001];
-vector<ll> cache(100001,-1);
-
-ll dfs(ll node){
-    ll mx = 0;
-    if(cache[node]!=-1) return cache[node];
-    for(auto child:adj[node] ){
-        mx = max(mx, 1 + dfs(child));
+vector<ll> v[100001];
+ll cache[100001][3];
+ll max_profit(ll ind,ll prev){
+    if(ind<0) return 0;
+    if(cache[ind][prev+1]!=-1) return cache[ind][prev+1];
+    ll mx = INT_MIN;
+    for(ll i=0;i<3;i++){
+        if(i!=prev){
+            mx = max(mx,v[ind][i] + max_profit(ind-1,i));
+        }
     }
-    return cache[node] = mx ;
+    return cache[ind][prev+1] = mx;
 }
 
 void solve(){
-        ll n,e;cin >> n >> e;
-        for(ll i=0;i<e;i++){
-            ll a,b;cin >> a >> b;
-            adj[a].push_back(b);
+        ll n;cin >> n;
+        for(ll i=0;i<n;i++) {
+            ll a,b,c;cin >> a >> b >> c;
+            v[i].push_back(a);
+            v[i].push_back(b);
+            v[i].push_back(c);
         }
-        ll res = 0;
-        for(int i=1;i<=n;i++){
-            res = max(res,dfs(i));
-        }
-        cout << res << el;
-
+        memset(cache,-1,sizeof(cache));
+        // ll res = INT_MIN;
+        // for(ll i=0;i<3;i++) res=max(res,max_profit(n-1,i))
+        cout << max_profit(n-1,-1);
 }
 int main(){
     ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
