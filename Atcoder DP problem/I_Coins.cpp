@@ -20,16 +20,17 @@ void print(ll x){cout << x << endl;}
 void print(char x){cout << x << endl;}
 void print(string &x){cout << x << endl;}
 //===================== Main problem Code starts from here =======================//
-double cache[3000][1500];
+double cache[3000][3000];
 double dp(vector<double> &v,ll ind,ll rest){
     if(ind<=0) {
-        return 1;
+        if(rest<(v.size()-rest)) return 1;
+        return 0;
     }
     if(cache[ind][rest]!=-1) return cache[ind][rest];
-    if(rest>0){
-        return cache[ind][rest]=(1-v[ind-1])*dp(v,ind-1,rest-1) + (v[ind-1])*dp(v,ind-1,rest) ;
-    }
-    return cache[ind][rest]=v[ind-1]*dp(v,ind-1,rest) ;
+    // if(rest>0){
+        return cache[ind][rest]=(1-v[ind-1])*dp(v,ind-1,rest+1) + (v[ind-1])*dp(v,ind-1,rest) ;
+    // }
+    // return cache[ind][rest]=v[ind-1]*dp(v,ind-1,rest) ;
 }
 
 void solve(){
@@ -40,7 +41,7 @@ void solve(){
     for(int i=0;i<3000;i++){
         for(int j=0;j<1500;j++) cache[i][j] = -1;
     }
-    cout << setprecision(10) <<dp(v,n,(n-1)/2) << el;
+    cout << setprecision(10) <<dp(v,n,0) << el;
 }
 int main(){
     ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
